@@ -1,0 +1,180 @@
+/* Base structure */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  font-size:62.5%;
+}
+/* End of Base structure */
+
+body{
+  font-family: sans-serif;
+}
+
+/* navbar */
+
+.navbar{
+  /* flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* estructura */
+  background-color: black;
+  color: white;
+  height: 6rem;
+  padding: 0 2.8rem;
+}
+
+.navbar_logo{
+  font-size: 2rem;
+}
+
+.navbar_info{
+  /* flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* estructura */
+  width: 40%;
+}
+
+.navbar_info_links{
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+
+  list-style: none;
+}
+
+.navbar_info_links li{
+  display: inline-block;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.navbar_info_links li::after{
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+
+  height: 0.2rem;
+  width: 100%;
+  display: block;
+
+  background-color: greenyellow;
+
+  transform: scaleX(0);
+}
+
+.navbar_info_links li:not(.selected):hover::after{
+  transform: scaleX(1);
+
+  transition: 0.1s;
+}
+
+.navbar_info_links li.selected::after{
+  transform: scaleX(1);
+  background-color: white;
+}
+
+.navbar_info_links li a{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar_info_user-options{
+  font-size: 1.8rem;
+}
+
+.navbar_info_user-options i{
+  cursor: pointer;
+}
+
+.navbar_info_user-options i:last-child{
+  margin-left: 1.8rem;
+}
+
+/* footer */
+
+.footer{
+  /* TEMPORAL */
+    margin-top: 100px;
+  /* FIN */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+
+  height: 20rem;
+  background-color: black;
+  color: white;
+  padding: 3rem 6rem;
+  font-size: 1.4rem;
+}
+
+.footer a{
+  color: white;
+  text-decoration: none;
+}
+
+.footer ul{
+  list-style: none;
+}
+
+:is(.footer_info_list,.footer_legales_list) a{
+  position: relative;
+}
+
+:is(.footer_info_list,.footer_legales_list) li:not(:last-child){
+  margin-bottom: 1.4rem;
+}
+
+:is(.footer_info_list,.footer_legales_list) a::after{
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+
+  height: 0.2rem;
+  width: 100%;
+  display: block;
+
+  background-color: greenyellow;
+
+  transform: scaleX(0);
+}
+
+:is(.footer_info_list,.footer_legales_list) a:hover::after{
+  transform: scaleX(1);
+
+  transition: 0.1s;
+}
+
+div.footer__down{
+  align-self: end;
+}
+
+div.footer__right{
+  justify-self: end;
+}
+
+.footer_derechos{
+  font-size: 1.2rem;
+  color: grey;
+}
+
+.footer_redes{
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  font-size: 3rem;
+}
+
+.footer_redes i:hover{
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(99,255,0,1) 0%, rgba(3,163,70,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
